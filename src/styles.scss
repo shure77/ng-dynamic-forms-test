@@ -1,0 +1,78 @@
+@import "~@material/layout-grid/mdc-layout-grid";
+@import "~@material/layout-grid/mixins";
+
+/* You can add global styles to this file, and also import other style files */
+
+$max-width: 1200px;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #424242;
+}
+
+.gsm-form-container {
+  display: flex;
+  padding: 15px;
+}
+
+.main-content-left {
+  flex: 1 1 100%;
+  order: 1;
+  margin-right: 15px;
+}
+
+.main-content-right {
+  flex: 1 1 100%;
+  order: 2;
+  min-width: 350px;
+  max-width: 35vw;
+}
+
+dynamic-material-form > dynamic-material-form-control {
+   max-width: $max-width;
+  display: block;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+ /* //PHONE
+  @include mdc-layout-grid-cell(phone, 4, 50);
+
+  mat-form-field {
+    display: block;
+    width: 100%;
+    min-width: initial;
+  }
+
+  //TABLET
+  @media only screen and (min-width: 480px) {
+    @include mdc-layout-grid-cell(tablet, 8, 50);
+    mat-form-field {
+      display: block;
+      width: 100%;
+      min-width: initial;
+    }
+  }
+
+  //DESKTOP
+  @media only screen and (min-width: 840px) {
+    @include mdc-layout-grid-cell(desktop, 12, 50);
+    mat-form-field {
+      width: 100%;
+      max-width: $max-width;
+      min-width: 200px;
+    }
+    dynamic-material-form-group {
+      mat-form-field {
+        max-width: initial;
+      }
+    }
+  }*/
+}
+

@@ -1,0 +1,25 @@
+<div class="gsm-form-container">
+  <div class="main-content-left">
+      <mat-card class="form-card">
+        <div class="gsm-form-label-block" *ngIf="formLabel">
+          <h3>
+            {{formLabel}}
+          </h3>
+        </div>
+        <form *ngIf="formGroup" [formGroup]="formGroup">
+          <dynamic-material-form class="ELEMENT" [group]="formGroup" [model]="formModel"
+                                 [layout]="formLayout">
+          </dynamic-material-form>
+        </form>
+      </mat-card>
+<!--      <div class="mdc-layout-grid__cell&#45;&#45;span-4-desktop
+                    mdc-layout-grid__cell&#45;&#45;span-3-tablet
+                    mdc-layout-grid__cell&#45;&#45;span-4-phone">
+        <mat-card class="box_1"></mat-card>
+        <mat-card class="box_2"></mat-card>
+      </div>-->
+    </div>
+  <div class="main-content-right">
+
+  </div>
+</div>

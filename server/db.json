@@ -1,0 +1,275 @@
+{
+  "forms": [
+    {
+      "id": "KERN_FF_lenker",
+      "type": "SELECT",
+      "label": "Lenker",
+      "required": true,
+      "options": [
+        {
+          "label": "Lenkerdaten erfassen",
+          "value": "lenkerdaten-erfassen"
+        },
+        {
+          "label": "Lenkerdaten werden nachgebracht",
+          "value": "lenkerdaten-werden-nachgebracht"
+        },
+        {
+          "label": "Lenker unbekannt",
+          "value": "lenker-unbekannt"
+        },
+        {
+          "label": "Kein Lenker",
+          "value": "kein-lenker"
+        }
+      ],
+      "meta": {
+        "entity": "Lenker"
+      }
+    },
+    {
+      "id": "Lenker__TEMPLATE",
+      "label": "Neuer Lenker erfassen",
+      "type": "GROUP",
+      "relations": [
+        {
+          "match": "VISIBLE",
+          "when": [
+            {
+              "rootPath": "KERN_FF_lenker",
+              "value": "lenkerdaten-erfassen"
+            }
+          ]
+        }
+      ],
+      "meta": {
+        "entity": "Lenker"
+      },
+      "group": [
+        {
+          "id": "neuer_lenker_erfassen_name_group",
+          "type": "GROUP",
+          "group": [
+            {
+              "id": "lenker_vorname",
+              "placeholder": "Vorname eingeben",
+              "label": "Vorname",
+              "type": "INPUT",
+              "value": "",
+              "meta": {
+                "entity": "Lenker.vorname"
+              }
+            },
+            {
+              "id": "lenker_nachname",
+              "placeholder": "Nachname eingeben",
+              "label": "Nachname",
+              "type": "INPUT",
+              "required": true,
+              "meta": {
+                "entity": "Lenker.nachname"
+              }
+            },
+            {
+              "id": "lenker_namenZusatz",
+              "placeholder": "Namenszusatz eingeben",
+              "label": "Namenszusatz",
+              "type": "INPUT",
+              "meta": {
+                "entity": "Lenker.nameZusatz"
+              }
+            }
+          ]
+        },
+        {
+          "id": "neuer_lenker_erfassen_plz_ort_group",
+          "type": "GROUP",
+          "group": [
+            {
+              "id": "lenker_adresse_plz",
+              "placeholder": "PLZ eingeben",
+              "label": "PLZ",
+              "type": "INPUT",
+              "meta": {
+                "entity": "Lenker.Adresse.plz"
+              }
+            },
+            {
+              "id": "lenker_adresse_ort",
+              "placeholder": "Ort eingeben",
+              "label": "Ort",
+              "type": "INPUT",
+              "meta": {
+                "entity": "Lenker.Adresse.ort"
+              }
+            }
+          ]
+        },
+        {
+          "id": "neuer_lenker_erfassen_street_nr_group",
+          "type": "GROUP",
+          "group": [
+            {
+              "id": "lenker_adresse_strasse",
+              "placeholder": "Straße eingeben",
+              "label": "Straße",
+              "type": "INPUT",
+              "meta": {
+                "entity": "Lenker.Adresse.strasse"
+              }
+            },
+            {
+              "id": "lenker_adresse_hausnummer",
+              "placeholder": "Hausnummer eingeben",
+              "label": "Hausnummer",
+              "type": "INPUT",
+              "meta": {
+                "entity": "Lenker.Adresse.hausNummer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "neuer_lenker_erfassen_date_license_group",
+          "type": "GROUP",
+          "group": [
+            {
+              "id": "lenker_geburtsDatum",
+              "placeholder": "Geburtsdatum eingeben",
+              "label": "Geburtsdatum",
+              "required": true,
+              "type": "DATEPICKER",
+              "meta": {
+                "entity": "Lenker.geburtsDatum"
+              }
+            },
+            {
+              "id": "lenker_fuehrerscheinNummer",
+              "placeholder": "Führerscheinnummer eingeben",
+              "label": "Führerscheinnummer",
+              "type": "INPUT",
+              "meta": {
+                "entity": "Lenker.fuehrerscheinNummer"
+              }
+            }
+          ]
+        },
+        {
+          "id": "lenker_fuehrerscheinKlassen",
+          "type": "SELECT",
+          "placeholder": "Führerscheinklassen",
+          "multiple": true,
+          "options": [
+            {
+              "label": "AM",
+              "value": "am"
+            },
+            {
+              "label": "A1",
+              "value": "a1"
+            },
+            {
+              "label": "A2",
+              "value": "a2"
+            },
+            {
+              "label": "A",
+              "value": "a"
+            },
+            {
+              "label": "B1",
+              "value": "b1"
+            },
+            {
+              "label": "C1",
+              "value": "c1"
+            },
+            {
+              "label": "C",
+              "value": "c"
+            },
+            {
+              "label": "D1",
+              "value": "d1"
+            },
+            {
+              "label": "D",
+              "value": "d"
+            },
+            {
+              "label": "BE",
+              "value": "be"
+            },
+            {
+              "label": "C1E",
+              "value": "c1e"
+            },
+            {
+              "label": "CE",
+              "value": "ce"
+            },
+            {
+              "label": "D1E",
+              "value": "d1e"
+            },
+            {
+              "label": "DE",
+              "value": "de"
+            },
+            {
+              "label": "F",
+              "value": "f"
+            }
+          ],
+          "meta": {
+            "entity": "Lenker.fuehrerscheinKlassen"
+          }
+        },
+        {
+          "id": "neuer_lenker_erfassen_comment_group",
+          "type": "GROUP",
+          "group": [
+            {
+              "id": "wird_nachgebracht",
+              "label": "Wird nachgebracht",
+              "type": "SWITCH"
+            },
+            {
+              "id": "kommentar_lenker",
+              "label": "Kommentar",
+              "type": "INPUT",
+              "placeholder": "Begründung eingeben"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kommentar",
+      "label": "Kommentar",
+      "name": "kommentar",
+      "type": "INPUT",
+      "required": true,
+      "placeholder": "Begründung eingeben",
+      "relations": [
+        {
+          "match": "VISIBLE",
+          "when": [
+            {
+              "rootPath": "KERN_FF_lenker",
+              "value": "lenkerdaten-werden-nachgebracht"
+            },
+            {
+              "rootPath": "KERN_FF_lenker",
+              "value": "lenkerdaten-unbekannt"
+            },
+            {
+              "rootPath": "KERN_FF_lenker",
+              "value": "kein-lenker"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
